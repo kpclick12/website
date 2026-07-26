@@ -32,14 +32,14 @@ export default function RootLayout({
             typewriter faces load normally — they cover smaller runs. */}
         <link
           rel="preload"
-          href="/fonts/cmu-serif-regular.woff2"
+          href="/fonts/cmu-concrete-regular.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
         />
         <link
           rel="preload"
-          href="/fonts/cmu-serif-bold.woff2"
+          href="/fonts/cmu-concrete-bold.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
@@ -69,17 +69,20 @@ export default function RootLayout({
                 <p>Published anonymously.</p>
               ) : (
                 <>
+                  {identity.name && <p>{identity.name}</p>}
                   {identity.email && (
                     <p>
                       <a href={`mailto:${identity.email}`}>{identity.email}</a>
                     </p>
                   )}
                   {identity.links.length > 0 && (
-                    <p>
+                    <p className="foot-links">
                       {identity.links.map((l, i) => (
                         <span key={l.href}>
-                          {i > 0 && " · "}
-                          <a href={l.href}>{l.label}</a>
+                          {i > 0 && <span aria-hidden="true"> · </span>}
+                          <a href={l.href} rel="me">
+                            {l.label}
+                          </a>
                         </span>
                       ))}
                     </p>

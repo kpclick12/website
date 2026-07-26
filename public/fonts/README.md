@@ -12,14 +12,30 @@ CM-Unicode project. This is why the site reads like a paper.
 
 ## What's here
 
-Four faces, self-hosted so nothing is fetched from a third party at runtime:
+Self-hosted so nothing is fetched from a third party at runtime.
+
+**In use — Concrete Roman.** Knuth cut Concrete for *Concrete Mathematics*
+because Computer Modern's hairlines were too light on the page; the same is true
+on a backlit screen. Same skeleton, sturdier strokes.
 
 | File | Face |
 |---|---|
-| `cmu-serif-regular.woff2` | CMU Serif roman — body text |
-| `cmu-serif-italic.woff2` | CMU Serif italic — emphasis, math variables |
-| `cmu-serif-bold.woff2` | CMU Serif bold — headings |
+| `cmu-concrete-regular.woff2` | Concrete roman — body text |
+| `cmu-concrete-italic.woff2` | Concrete italic — emphasis, math variables |
+| `cmu-concrete-bold.woff2` | Concrete bold — headings |
 | `cmu-typewriter-regular.woff2` | CMU Typewriter Text — metadata, labels, code |
+
+**Also present, not in use — plain Computer Modern.** Kept so the choice is
+reversible: swap `"CMU Concrete"` for `"CMU Serif"` in the `--display` and
+`--prose` tokens in `app/globals.css`, and repoint the two preload links in
+`app/layout.tsx`. Browsers don't download a declared face that nothing uses, so
+these cost nothing at runtime.
+
+| File | Face |
+|---|---|
+| `cmu-serif-regular.woff2` | CMU Serif roman |
+| `cmu-serif-italic.woff2` | CMU Serif italic |
+| `cmu-serif-bold.woff2` | CMU Serif bold |
 
 ## Subsetting
 

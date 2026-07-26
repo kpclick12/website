@@ -28,6 +28,35 @@
   src: url("/fonts/cmu-serif-bold.woff2") format("woff2");
 }
 
+/* Concrete Roman — Knuth cut this for "Concrete Mathematics" precisely because
+   Computer Modern's hairlines were too light. Same skeleton, sturdier strokes,
+   which is what a backlit screen wants. This is the family in use; CMU Serif is
+   still declared above, so switching back is just the two --display/--prose
+   tokens below. */
+@font-face {
+  font-family: "CMU Concrete";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/cmu-concrete-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CMU Concrete";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/cmu-concrete-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "CMU Concrete";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/cmu-concrete-bold.woff2") format("woff2");
+}
+
 @font-face {
   font-family: "CMU Typewriter";
   font-style: normal;
@@ -57,10 +86,10 @@
   --viz-series-2: #eb6834;
   --viz-grid: #e7e2d7;
 
-  /* One family throughout, the way a paper is set. Fallbacks are metric-ish
-     serifs so the swap doesn't shift layout much. */
-  --display: "CMU Serif", ui-serif, Georgia, Cambria, "Times New Roman", serif;
-  --prose: "CMU Serif", ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  /* One family throughout, the way a paper is set. Swap "CMU Concrete" for
+     "CMU Serif" in both to go back to plain Computer Modern. */
+  --display: "CMU Concrete", ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  --prose: "CMU Concrete", ui-serif, Georgia, Cambria, "Times New Roman", serif;
   --mono: "CMU Typewriter", ui-monospace, SFMono-Regular, Menlo, Consolas,
     monospace;
 
@@ -221,6 +250,16 @@ a {
 
 .site-foot p {
   margin: 0 0 0.35rem;
+}
+
+.foot-links a {
+  color: var(--ink-secondary);
+  text-decoration-color: var(--rule);
+  text-underline-offset: 0.2em;
+}
+
+.foot-links a:hover {
+  color: var(--accent);
 }
 
 /* ---------------------------------------------------------------------------

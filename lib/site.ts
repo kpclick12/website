@@ -14,16 +14,33 @@ export const site = {
   tagline: "A personal page of stories explaining things I find interesting.",
   /** The longer standfirst on the landing page. */
   about:
-    "A personal page where I post stories trying to explain things I find interesting — usually by taking something apart until the shape of it is obvious.",
+    "A personal page where I post stories trying to explain things I find interesting — usually while I'm still working them out myself.",
   url: "https://kpclick12.vercel.app",
 };
 
+/**
+ * Attribution, deliberately low-key.
+ *
+ * Everything here renders in ONE place: the site footer. There is no per-post
+ * byline and no author line on articles — the writing carries itself, and a name
+ * repeated at the top of every piece is the thing we're avoiding. If you ever do
+ * want a byline, that's a new component, not a flag flip here.
+ */
 export const identity = {
-  /** While true: no name, no email, no social links rendered anywhere. */
-  anonymous: true,
+  /** While true, nothing below renders and the footer reads "Published anonymously." */
+  anonymous: false,
 
-  /** Only used when `anonymous` is false. */
+  /**
+   * Optional. Leave empty and the footer shows only the links — the GitHub
+   * account already makes it findable without printing a name on the page.
+   */
   name: "",
+
+  /** Leave empty to publish no address. */
   email: "",
-  links: [] as { label: string; href: string }[],
+
+  links: [{ label: "GitHub", href: "https://github.com/kpclick12" }] as {
+    label: string;
+    href: string;
+  }[],
 };
