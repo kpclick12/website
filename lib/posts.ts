@@ -49,16 +49,6 @@ export const posts: Post[] = [
     standalone: true,
     repo: "https://github.com/kpclick12/scrolly-butterflyeffect",
   },
-  {
-    slug: "anscombes-quartet",
-    title: "Four datasets, one summary",
-    dek: "Same mean, same variance, same correlation, same fit line — and four completely different shapes. Why you should always plot the thing.",
-    date: "2026-07-26",
-    minutes: 4,
-    // Written to prove the in-repo scrollytelling components worked. Flip to
-    // true to put it back on the landing page.
-    published: false,
-  },
 ];
 
 export const publishedPosts = posts

@@ -25,7 +25,8 @@ app/
   posts/<slug>/page.tsx   one route per post
 components/
   Scrolly.tsx             sticky-figure scrollytelling + reading bar
-  AnscombeFigure.tsx      the figures for the first post
+                          (unused for now — pieces live in their own repos;
+                           kept for a short post written directly in this site)
 lib/
   site.ts                 title, tagline, identity switch
   posts.ts                post registry (drives the landing page)

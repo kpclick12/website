@@ -493,6 +493,11 @@ a {
   line-height: 1.5;
 }
 
+.article-head .dek a {
+  color: var(--accent);
+  text-underline-offset: 0.2em;
+}
+
 .prose > p {
   margin: 0 0 1.35em;
 }
