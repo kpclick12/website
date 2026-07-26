@@ -39,8 +39,9 @@ export const identity = {
   /** Leave empty to publish no address. */
   email: "",
 
-  links: [{ label: "GitHub", href: "https://github.com/kpclick12" }] as {
-    label: string;
-    href: string;
-  }[],
+  /** Add LinkedIn here when you're ready — same shape, appended to the end. */
+  links: [
+    { label: "GitHub", href: "https://github.com/kpclick12" },
+    { label: "Reddit", href: "https://www.reddit.com/user/kpclick12" },
+  ] as { label: string; href: string }[],
 };
