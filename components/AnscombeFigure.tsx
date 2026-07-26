@@ -236,7 +236,8 @@ export function AnscombeTable() {
             ))}
           </tr>
           <tr>
-            <th scope="col" />
+            {/* Corner cell heads nothing — a th here reads as an empty header. */}
+            <td />
             {datasets.map((d) => (
               <Fragment key={d.id}>
                 <th scope="col">x</th>

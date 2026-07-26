@@ -89,7 +89,10 @@
   --paper-raised: #fffefb;
   --ink: #14120f;
   --ink-secondary: #4a463f;
-  --ink-muted: #7d776c;
+  /* 5.05:1 on --paper. #7d776c looked right but measured 4.08:1, under the 4.5
+     WCAG AA floor for small text — and this token carries the 12-13px labels,
+     dates and the theme toggle, so it has to clear it. */
+  --ink-muted: #6e6862;
   --rule: #ddd8cd;
   --accent: #1f3bd6;
 
@@ -579,7 +582,10 @@ a {
   border-radius: 0.5rem;
   padding: 1.25rem 1.375rem;
   box-shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px rgb(0 0 0 / 0.06);
-  opacity: 0.45;
+  /* Was 0.45, which dimmed the inactive cards well below readable contrast. At
+     0.8, paired with --ink-secondary on the label below, the dimmed text still
+     clears 4.5:1 in both themes while reading as clearly recessive. */
+  opacity: 0.8;
   transition: opacity 260ms ease;
 }
 
@@ -600,7 +606,9 @@ a {
   font-size: 0.6875rem;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--ink-muted);
+  /* --ink-muted would fail contrast once the inactive card's opacity is applied
+     on top of it; secondary survives the compositing. */
+  color: var(--ink-secondary);
 }
 
 /* Desktop: a real two-column grid — pinned figure left, steps right. No
