@@ -19,12 +19,47 @@ npm run build   # production build; also type-checks
 
 ```
 app/
-  layout.tsx     root layout + <head> metadata
-  page.tsx       homepage
-  globals.css    global styles (light/dark via prefers-color-scheme)
+  layout.tsx              shell: header, footer, metadata
+  page.tsx                landing page — masthead + post list
+  globals.css             design tokens + all styles
+  posts/<slug>/page.tsx   one route per post
+components/
+  Scrolly.tsx             sticky-figure scrollytelling + reading bar
+  AnscombeFigure.tsx      the figures for the first post
+lib/
+  site.ts                 title, tagline, identity switch
+  posts.ts                post registry (drives the landing page)
+data/                     datasets, one module per post
 ```
 
-Add a page by creating `app/<route>/page.tsx`.
+## Adding a post
+
+1. Create `app/posts/<slug>/page.tsx`.
+2. Add an entry to `posts` in `lib/posts.ts` — the landing page reads from it.
+   `published: false` hides it without deleting the route.
+
+For a scroll-driven piece, put the narrative in a client component beside the
+page and hand `<Scrolly>` a `figure` render function plus an array of `steps`.
+`figure` receives the active step index, so the graphic responds to scroll
+position. Keep the step order in sync with whatever the figure switches on.
+
+## Identity
+
+`lib/site.ts` exports an `identity` object with an `anonymous` flag, currently
+`true`. While it is true, no name, email, or social link is rendered anywhere and
+no author is written into page metadata. Flip it and fill in the fields to
+attribute the site.
+
+## Charts
+
+Colours live as CSS custom properties (`--viz-*`) in `globals.css`, with separate
+steps chosen for the dark surface rather than flipped automatically. The pair in
+use passes colourblind-separation and contrast checks in both modes. Markers are
+≥8px on screen and carry a 2px surface ring so overlapping points stay readable —
+the small-multiple radius is pre-scaled because those SVGs render smaller.
+
+Every figure has a table equivalent on the page; the pinned graphic is
+`aria-hidden` since it duplicates the step text.
 
 ## Deploys
 
