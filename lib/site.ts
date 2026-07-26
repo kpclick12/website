@@ -9,7 +9,11 @@
 
 export const site = {
   title: "kpclick12",
-  tagline: "Scroll-driven stories, mostly about data.",
+  /** Short version — used for page metadata and the browser tab description. */
+  tagline: "A personal page of stories explaining things I find interesting.",
+  /** The longer standfirst on the landing page. */
+  about:
+    "A personal page where I post stories trying to explain things I find interesting — usually by taking something apart until the shape of it is obvious.",
   url: "https://kpclick12.vercel.app",
 };
 

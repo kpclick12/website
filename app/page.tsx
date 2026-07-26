@@ -1,17 +1,22 @@
 import Link from "next/link";
 
+import { MathPanel } from "@/components/MathPanel";
 import { formatDate, publishedPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
 
 export default function Home() {
   return (
-    <>
-      <div className="wrap masthead">
-        <h1>{site.title}</h1>
-        <p>{site.tagline}</p>
+    <div className="landing">
+      <div className="landing-art">
+        <MathPanel />
       </div>
 
-      <div className="wrap">
+      <div className="landing-body">
+        <div className="masthead">
+          <h1>{site.title}</h1>
+          <p>{site.about}</p>
+        </div>
+
         <h2 className="post-list-label">Posts</h2>
 
         {publishedPosts.length === 0 ? (
@@ -33,6 +38,6 @@ export default function Home() {
           </ul>
         )}
       </div>
-    </>
+    </div>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { ThemeToggle, themeScript } from "@/components/ThemeToggle";
 import { identity, site } from "@/lib/site";
 import "./globals.css";
 
@@ -22,6 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Applies a stored dark choice before first paint to avoid a flash. */}
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>
         <div className="shell">
           <header className="site-head">
@@ -29,7 +34,9 @@ export default function RootLayout({
               <Link href="/" className="wordmark">
                 {site.title}
               </Link>
-              <nav>writing on data</nav>
+              <nav>
+                <ThemeToggle />
+              </nav>
             </div>
           </header>
 

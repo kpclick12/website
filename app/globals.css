@@ -28,23 +28,24 @@
   --gutter: clamp(1.25rem, 5vw, 3rem);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
+/* Dark is opt-in only. `prefers-color-scheme` is deliberately not used: a reader
+   whose OS is dark still gets the light page unless they press the toggle, which
+   stamps data-theme="dark" on the root element. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
 
-    --paper: #0f0e0d;
-    --paper-raised: #1a1918;
-    --ink: #f1eee8;
-    --ink-secondary: #b8b3a9;
-    --ink-muted: #8b857a;
-    --rule: #2c2a27;
-    --accent: #8ea2ff;
+  --paper: #0f0e0d;
+  --paper-raised: #1a1918;
+  --ink: #f1eee8;
+  --ink-secondary: #b8b3a9;
+  --ink-muted: #8b857a;
+  --rule: #2c2a27;
+  --accent: #8ea2ff;
 
-    --viz-surface: #1a1a19;
-    --viz-series-1: #3987e5;
-    --viz-series-2: #d95926;
-    --viz-grid: #2e2c28;
-  }
+  --viz-surface: #1a1a19;
+  --viz-series-1: #3987e5;
+  --viz-series-2: #d95926;
+  --viz-grid: #2e2c28;
 }
 
 *,
@@ -102,6 +103,13 @@ a {
   border-bottom: 1px solid var(--rule);
 }
 
+/* Chrome spans the full shell width so it lines up with the landing grid rather
+   than with the narrower article measure. */
+.site-head .wrap,
+.site-foot .wrap {
+  max-width: 74rem;
+}
+
 .site-head .wrap {
   display: flex;
   align-items: baseline;
@@ -118,9 +126,28 @@ a {
 }
 
 .site-head nav {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
   font-family: var(--mono);
   font-size: 0.8125rem;
   color: var(--ink-muted);
+}
+
+.theme-toggle {
+  appearance: none;
+  background: none;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font: inherit;
+  color: var(--ink-muted);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: var(--ink);
+  border-color: var(--ink-muted);
 }
 
 .site-foot {
@@ -140,8 +167,100 @@ a {
    Landing
    --------------------------------------------------------------------------- */
 
+/* Mobile: the figure sits behind the masthead as texture, fading out before the
+   post list starts. Desktop turns it into a real left-hand column below. */
+.landing {
+  position: relative;
+  width: 100%;
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.landing-art {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(115%, 23rem);
+  /* Cropped to the circle only — the formulas below it would run into the post
+     list. Faint enough to sit under text without fighting it. */
+  height: 20rem;
+  overflow: hidden;
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 92%);
+  mask-image: linear-gradient(to bottom, #000 45%, transparent 92%);
+}
+
+.landing-body {
+  position: relative;
+  z-index: 1;
+}
+
+.math-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--ink);
+}
+
+/* e^(iθ) sweeping the unit circle. Slow enough to be noticed, not watched. */
+.orbit {
+  transform-box: view-box;
+  transform-origin: 190px 205px;
+  animation: orbit 32s linear infinite;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit {
+    animation: none;
+  }
+}
+
+@media (min-width: 60rem) {
+  .landing {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 33rem);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+    max-width: 74rem;
+  }
+
+  .landing-art {
+    position: sticky;
+    top: 2.5rem;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: 25rem;
+    height: auto;
+    overflow: visible;
+    margin-inline: auto;
+    opacity: 1;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
 .masthead {
   padding: clamp(3.5rem, 12vw, 7rem) 0 clamp(2.5rem, 7vw, 4rem);
+}
+
+@media (min-width: 60rem) {
+  .masthead {
+    padding-top: clamp(2.5rem, 6vw, 4.5rem);
+  }
 }
 
 .masthead h1 {
@@ -155,9 +274,10 @@ a {
 
 .masthead p {
   margin: 0;
-  max-width: 26rem;
+  max-width: 30rem;
   color: var(--ink-secondary);
   font-size: 1.125rem;
+  text-wrap: pretty;
 }
 
 .post-list-label {
