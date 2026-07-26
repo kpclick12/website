@@ -9,6 +9,12 @@
  *      normal case for the scrollytelling pieces: they are whole projects with
  *      their own build (Svelte, Three.js, their own typeface) and rewriting to
  *      them beats vendoring or rewriting them.
+ *
+ * NOT FOR THIS SITE: `scrolly-students`, `scrolly-math` and `scrolly-absence`
+ * are work projects and private. They are deliberately out of scope — do not add
+ * entries or rewrites for them.
+ *
+ * Held back for now, to publish later: `scrolly-wealth`, `scrolly-monopoly`.
  */
 
 export type Post = {

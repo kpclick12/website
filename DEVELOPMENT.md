@@ -32,6 +32,26 @@ lib/
 data/                     datasets, one module per post
 ```
 
+## Pieces
+
+Scrollytelling pieces are separate projects — one repo each, own stack, own
+build, own deploy — and this site serves them at a clean path via rewrites in
+`next.config.mjs`. Same shape The Pudding uses: one repo for the site, one repo
+per story. Adding one is four rewrite lines plus a registry entry; nothing gets
+vendored or rewritten, and the piece keeps working standalone.
+
+| Piece | On the site |
+|---|---|
+| `scrolly-butterflyeffect` | yes — `/posts/the-flap-of-a-wing` |
+| `scrolly-wealth` | not yet, planned |
+| `scrolly-monopoly` | not yet, planned |
+| `scrolly-students` | **no — work project, private** |
+| `scrolly-math` | **no — work project, private** |
+| `scrolly-absence` | **no — work project, private** |
+
+The last three are out of scope for this site. Don't add entries or rewrites for
+them.
+
 ## Adding a post
 
 1. Create `app/posts/<slug>/page.tsx`.
