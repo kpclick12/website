@@ -37,6 +37,28 @@ these cost nothing at runtime.
 | `cmu-serif-italic.woff2` | CMU Serif italic |
 | `cmu-serif-bold.woff2` | CMU Serif bold |
 
+## Why `font-display: optional`
+
+Not `swap`. With `swap`, text painted in the fallback serif and then reflowed
+when the real face arrived; the two have different advance widths, so the reflow
+changed line breaks — a measurable layout shift (0.014 on the article page with
+fonts delayed 700ms).
+
+`optional` lets the browser use a face only if it arrives before paint, and
+forbids swapping afterwards, so the shift cannot occur on any device. Measured
+0.000 on both pages after the change, with the real faces still in use.
+
+The alternative was a metrics-matched fallback (`size-adjust`, `ascent-override`).
+Rejected: the correct `size-adjust` depends on which serif the reader's OS
+supplies — Georgia, Times and Noto Serif all differ — so it can only ever be
+tuned for one of them. And since the stylesheet sets `line-height` as a unitless
+number throughout, line boxes are already independent of font metrics, so the
+vertical overrides would have bought nothing.
+
+The trade-off: on a genuinely slow first load the page renders in a fallback
+serif for that view. All four faces are preloaded in `app/layout.tsx` to keep
+that rare, and once cached the real faces are always used.
+
 ## Subsetting
 
 These are subsets, not the full fonts: 792 KB reduced to 180 KB. Regenerate with

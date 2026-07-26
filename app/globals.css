@@ -1,14 +1,27 @@
 /* ---------------------------------------------------------------------------
    Computer Modern — self-hosted, subset. See public/fonts/README.md.
-   `font-display: swap` so text paints immediately in the fallback serif and
-   reflows once the face lands, rather than blocking on ~180KB of fonts.
+
+   `font-display: optional` rather than `swap`: with swap, text painted in the
+   fallback serif and then reflowed when the real face landed, and because the
+   two have different advance widths the reflow changed line breaks — a layout
+   shift. `optional` gives the browser a short window to use the real font and
+   forbids swapping after paint, so the shift cannot happen on any device.
+
+   The alternative was a metrics-matched fallback (size-adjust), but the right
+   value depends on which serif the reader's OS supplies — Georgia, Times, Noto
+   Serif all differ — so it can only be tuned for one of them. This can't be
+   wrong anywhere.
+
+   The trade: on a slow first load the page renders in a fallback serif for that
+   view. All four faces are preloaded to make that rare, and once cached the real
+   faces are always used.
    --------------------------------------------------------------------------- */
 
 @font-face {
   font-family: "CMU Serif";
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/cmu-serif-regular.woff2") format("woff2");
 }
 
@@ -16,7 +29,7 @@
   font-family: "CMU Serif";
   font-style: italic;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/cmu-serif-italic.woff2") format("woff2");
 }
 
@@ -24,7 +37,7 @@
   font-family: "CMU Serif";
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/cmu-serif-bold.woff2") format("woff2");
 }
 
@@ -37,7 +50,7 @@
   font-family: "CMU Concrete";
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/cmu-concrete-regular.woff2") format("woff2");
 }
 
@@ -45,7 +58,7 @@
   font-family: "CMU Concrete";
   font-style: italic;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/cmu-concrete-italic.woff2") format("woff2");
 }
 
@@ -53,7 +66,7 @@
   font-family: "CMU Concrete";
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/cmu-concrete-bold.woff2") format("woff2");
 }
 
@@ -61,7 +74,7 @@
   font-family: "CMU Typewriter";
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/cmu-typewriter-regular.woff2") format("woff2");
 }
 

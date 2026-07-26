@@ -28,22 +28,26 @@ export default function RootLayout({
         {/* Applies a stored dark choice before first paint to avoid a flash. */}
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
 
-        {/* The two faces carrying most above-the-fold text. The italic and
-            typewriter faces load normally — they cover smaller runs. */}
-        <link
-          rel="preload"
-          href="/fonts/cmu-concrete-regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/cmu-concrete-bold.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
+        {/* All four faces appear above the fold on the landing page — roman in
+            the standfirst, bold in the wordmark, italic in its variable,
+            typewriter in the dates and labels. With font-display: optional the
+            browser only uses a face that arrives before it paints, so every one
+            of them needs the head start. ~180KB total, subset. */}
+        {[
+          "cmu-concrete-regular",
+          "cmu-concrete-bold",
+          "cmu-concrete-italic",
+          "cmu-typewriter-regular",
+        ].map((f) => (
+          <link
+            key={f}
+            rel="preload"
+            href={`/fonts/${f}.woff2`}
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+        ))}
       </head>
       <body>
         <div className="shell">
