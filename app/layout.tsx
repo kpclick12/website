@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ThemeToggle, themeScript } from "@/components/ThemeToggle";
+import { Wordmark } from "@/components/Wordmark";
 import { identity, site } from "@/lib/site";
 import "./globals.css";
 
@@ -26,13 +27,30 @@ export default function RootLayout({
       <head>
         {/* Applies a stored dark choice before first paint to avoid a flash. */}
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+
+        {/* The two faces carrying most above-the-fold text. The italic and
+            typewriter faces load normally — they cover smaller runs. */}
+        <link
+          rel="preload"
+          href="/fonts/cmu-serif-regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/cmu-serif-bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
       </head>
       <body>
         <div className="shell">
           <header className="site-head">
             <div className="wrap">
-              <Link href="/" className="wordmark">
-                {site.title}
+              <Link href="/" className="wordmark" aria-label="explain — home">
+                <Wordmark />
               </Link>
               <nav>
                 <ThemeToggle />

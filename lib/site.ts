@@ -8,7 +8,8 @@
  */
 
 export const site = {
-  title: "kpclick12",
+  /** Plain-text form of the wordmark, for metadata and anywhere markup can't go. */
+  title: "(x)plain",
   /** Short version — used for page metadata and the browser tab description. */
   tagline: "A personal page of stories explaining things I find interesting.",
   /** The longer standfirst on the landing page. */

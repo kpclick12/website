@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { MathPanel } from "@/components/MathPanel";
+import { Wordmark } from "@/components/Wordmark";
 import { formatDate, publishedPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
 
@@ -13,7 +14,9 @@ export default function Home() {
 
       <div className="landing-body">
         <div className="masthead">
-          <h1>{site.title}</h1>
+          <h1 aria-label="explain">
+            <Wordmark />
+          </h1>
           <p>{site.about}</p>
         </div>
 
