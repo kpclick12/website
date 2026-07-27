@@ -28,11 +28,6 @@ export default function About() {
           Someone once said that you have to publish work in progress if you
           want to learn anything or get useful feedback. This is me trying that.
         </p>
-        <p className="footnote">
-          So if something here is wrong, unclear, or could be done better,
-          I&rsquo;d genuinely like to know. LinkedIn is the easiest way to reach
-          me, and I read the comments wherever a piece gets posted.
-        </p>
       </div>
     </>
   );
