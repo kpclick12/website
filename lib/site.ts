@@ -15,7 +15,13 @@ export const site = {
   /** The longer standfirst on the landing page. */
   about:
     "A personal page where I post stories trying to explain things I find interesting — usually while I'm still working them out myself.",
-  url: "https://kpclick12.vercel.app",
+  /**
+   * Canonical origin. Feeds `metadataBase`, so it decides the absolute URLs in
+   * Open Graph tags and anything else resolved against the site root.
+   * kpclick12.vercel.app still serves the site, but this is the address of
+   * record.
+   */
+  url: "https://plainx.dev",
 };
 
 /**

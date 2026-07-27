@@ -13,6 +13,15 @@ export const metadata: Metadata = {
   },
   description: site.tagline,
   metadataBase: new URL(site.url),
+  openGraph: {
+    type: "website",
+    siteName: site.title,
+    title: site.title,
+    description: site.tagline,
+    url: "/",
+    locale: "en",
+  },
+  twitter: { card: "summary" },
   // No author tag while anonymous — see lib/site.ts
   ...(identity.anonymous ? {} : { authors: [{ name: identity.name }] }),
 };

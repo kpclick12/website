@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { MathPanel } from "@/components/MathPanel";
 import { Wordmark } from "@/components/Wordmark";
 import { formatDate, postHref, publishedPosts, type Post } from "@/lib/posts";
 import { site } from "@/lib/site";
+
+// Set per-page rather than on the layout, so future pages don't inherit a
+// canonical pointing at the root.
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 function PostEntry({ post }: { post: Post }) {
   const body = (
