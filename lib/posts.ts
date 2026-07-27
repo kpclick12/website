@@ -17,9 +17,13 @@
  * Held back for now, to publish later: `scrolly-wealth`, `scrolly-monopoly`.
  */
 
+import type { TopicId } from "./topics";
+
 export type Post = {
   slug: string;
   title: string;
+  /** Subject, from lib/topics.ts. Drives the filter and the tag on the card. */
+  topic: TopicId;
   /** One-line standfirst shown under the title on the landing page. */
   dek: string;
   /** ISO date — used for sorting and the printed date. */
@@ -45,6 +49,7 @@ export const posts: Post[] = [
     dek: "The butterfly effect and Europe's new extreme weather. Opens on a yellow butterfly over a sunlit meadow, which you scroll into a thunderstorm — then follows the nudge into heat, floods and fire.",
     date: "2026-07-25",
     minutes: 8,
+    topic: "climate",
     published: true,
     standalone: true,
     repo: "https://github.com/kpclick12/scrolly-butterflyeffect",
