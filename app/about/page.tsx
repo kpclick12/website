@@ -25,8 +25,8 @@ export default function About() {
           out myself.
         </p>
         <p>
-          Someone once said that you have to publish work in progress if you
-          want to improve or get useful feedback. This is me trying that.
+          Someone once said that you have to publish work in progress to get
+          useful feedback and improve. This is me trying that.
         </p>
       </div>
     </>
