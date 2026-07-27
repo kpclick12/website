@@ -20,8 +20,19 @@ export const metadata: Metadata = {
     description: site.tagline,
     url: "/",
     locale: "en",
+    // Declared here rather than via app/opengraph-image.png: the file
+    // convention gives a hashed URL but silently ignored the accompanying
+    // .alt.txt, so no og:image:alt was emitted. Explicit keeps the alt text.
+    images: [
+      {
+        url: "/og.png",
+        width: 2400,
+        height: 1260,
+        alt: "The wordmark (x)plain beside a fine-lined unit circle in the complex plane, with the point e^(iπ) marked at −1.",
+      },
+    ],
   },
-  twitter: { card: "summary" },
+  twitter: { card: "summary_large_image" },
   // No author tag while anonymous — see lib/site.ts
   ...(identity.anonymous ? {} : { authors: [{ name: identity.name }] }),
 };
