@@ -37,8 +37,10 @@ export const identity = {
   anonymous: false,
 
   /**
-   * Optional. Leave empty and the footer shows only the links — the GitHub
-   * account already makes it findable without printing a name on the page.
+   * Deliberately empty even though the name is no longer private: it appears
+   * once, on /about, where someone has chosen to go looking. Putting it in the
+   * footer would repeat it on every page, which is the thing being avoided.
+   * Set it here if you'd rather it appear site-wide.
    */
   name: "",
 

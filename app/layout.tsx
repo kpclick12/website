@@ -77,6 +77,9 @@ export default function RootLayout({
                 <Wordmark />
               </Link>
               <nav>
+                <Link href="/about" className="nav-link">
+                  About
+                </Link>
                 <ThemeToggle />
               </nav>
             </div>

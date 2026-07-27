@@ -239,6 +239,16 @@ a {
   color: var(--ink-muted);
 }
 
+.nav-link {
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--ink);
+}
+
 .theme-toggle {
   appearance: none;
   background: none;
@@ -578,7 +588,9 @@ a {
    --------------------------------------------------------------------------- */
 
 .article-head {
-  padding: clamp(3rem, 10vw, 5.5rem) 0 2rem;
+  /* padding-block, not the shorthand: the shorthand zeroed the inline padding
+     that .wrap sets, so the heading sat flush left of its own body text. */
+  padding-block: clamp(3rem, 10vw, 5.5rem) 2rem;
 }
 
 .article-head .kicker {
