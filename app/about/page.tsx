@@ -30,8 +30,8 @@ export default function About() {
         </p>
         <p className="footnote">
           So if something here is wrong, unclear, or could be done better,
-          I&rsquo;d genuinely like to know — the links at the bottom of the page
-          all reach me.
+          I&rsquo;d genuinely like to know. LinkedIn is the easiest way to reach
+          me, and I read the comments wherever a piece gets posted.
         </p>
       </div>
     </>

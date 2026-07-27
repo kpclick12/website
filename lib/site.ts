@@ -47,9 +47,17 @@ export const identity = {
   /** Leave empty to publish no address. */
   email: "",
 
-  /** Add LinkedIn here when you're ready — same shape, appended to the end. */
+  /**
+   * Note these are not all contact routes: GitHub has no direct messaging, so
+   * it's a portfolio link. LinkedIn and Reddit are the ones that actually reach
+   * a human — /about says so rather than implying all three do.
+   */
   links: [
     { label: "GitHub", href: "https://github.com/kpclick12" },
     { label: "Reddit", href: "https://www.reddit.com/user/kpclick12" },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/johan-hellen%C3%A4s-6a260ab1",
+    },
   ] as { label: string; href: string }[],
 };
