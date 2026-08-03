@@ -14,7 +14,7 @@
  * are work projects and private. They are deliberately out of scope — do not add
  * entries or rewrites for them.
  *
- * Held back for now, to publish later: `scrolly-wealth`, `scrolly-monopoly`.
+ * Held back for now, to publish later: `scrolly-monopoly`.
  */
 
 import type { TopicId } from "./topics";
@@ -43,6 +43,17 @@ export type Post = {
 };
 
 export const posts: Post[] = [
+  {
+    slug: "the-birth-lottery",
+    title: "The Birth Lottery",
+    dek: "What wealth actually is, how it gets created, and how much of your own share was settled the day you were born. Starts on an island with one inhabitant, ends on a wheel you spin to be born somewhere at random — weighted by where the world's babies are really born.",
+    date: "2026-08-03",
+    minutes: 10,
+    topic: "economics",
+    published: true,
+    standalone: true,
+    repo: "https://github.com/kpclick12/scrolly-wealth",
+  },
   {
     slug: "the-flap-of-a-wing",
     title: "The Flap of a Wing",

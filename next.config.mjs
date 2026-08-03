@@ -19,6 +19,11 @@ const pieces = [
     origin: "https://kpclick12.github.io/scrolly-butterflyeffect",
     assetBase: "/scrolly-butterflyeffect",
   },
+  {
+    path: "/posts/the-birth-lottery",
+    origin: "https://kpclick12.github.io/scrolly-wealth",
+    assetBase: "/scrolly-wealth",
+  },
 ];
 
 /** @type {import('next').NextConfig} */

@@ -44,7 +44,7 @@ vendored or rewritten, and the piece keeps working standalone.
 | Piece | On the site |
 |---|---|
 | `scrolly-butterflyeffect` | yes — `/posts/the-flap-of-a-wing` |
-| `scrolly-wealth` | not yet, planned |
+| `scrolly-wealth` | yes — `/posts/the-birth-lottery` |
 | `scrolly-monopoly` | not yet, planned |
 | `scrolly-students` | **no — work project, private** |
 | `scrolly-math` | **no — work project, private** |
