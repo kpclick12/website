@@ -45,7 +45,7 @@ vendored or rewritten, and the piece keeps working standalone.
 |---|---|
 | `scrolly-butterflyeffect` | yes — `/posts/the-flap-of-a-wing` |
 | `scrolly-wealth` | yes — `/posts/the-birth-lottery` |
-| `scrolly-monopoly` | not yet, planned |
+| `scrolly-monopoly` | yes — `/posts/the-board-has-changed` |
 | `scrolly-students` | **no — work project, private** |
 | `scrolly-math` | **no — work project, private** |
 | `scrolly-absence` | **no — work project, private** |

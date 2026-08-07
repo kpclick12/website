@@ -24,6 +24,11 @@ const pieces = [
     origin: "https://kpclick12.github.io/scrolly-wealth",
     assetBase: "/scrolly-wealth",
   },
+  {
+    path: "/posts/the-board-has-changed",
+    origin: "https://kpclick12.github.io/scrolly-monopoly",
+    assetBase: "/scrolly-monopoly",
+  },
 ];
 
 /** @type {import('next').NextConfig} */

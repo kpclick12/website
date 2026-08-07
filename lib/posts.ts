@@ -14,7 +14,6 @@
  * are work projects and private. They are deliberately out of scope — do not add
  * entries or rewrites for them.
  *
- * Held back for now, to publish later: `scrolly-monopoly`.
  */
 
 import type { TopicId } from "./topics";
@@ -43,6 +42,17 @@ export type Post = {
 };
 
 export const posts: Post[] = [
+  {
+    slug: "the-board-has-changed",
+    title: "The Board Has Changed (Swedish)",
+    dek: "The Swedish housing market, seen through Monopoly. Starts with the streets and prices of the 1937 Stockholm edition, then follows the game into housing prices, ownership, taxes and debt, and who gets a chance to enter the market at all.",
+    date: "2026-08-07",
+    minutes: 10,
+    topic: "economics",
+    published: true,
+    standalone: true,
+    repo: "https://github.com/kpclick12/scrolly-monopoly",
+  },
   {
     slug: "the-birth-lottery",
     title: "The Birth Lottery",
