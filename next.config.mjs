@@ -15,6 +15,11 @@
  */
 const pieces = [
   {
+    path: "/posts/can-we-predict-the-next-stock-market-crash",
+    origin: "https://kpclick12.github.io/scrolly-next-crash",
+    assetBase: "/scrolly-next-crash",
+  },
+  {
     path: "/posts/the-flap-of-a-wing",
     origin: "https://kpclick12.github.io/scrolly-butterflyeffect",
     assetBase: "/scrolly-butterflyeffect",

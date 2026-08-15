@@ -43,6 +43,17 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "can-we-predict-the-next-stock-market-crash",
+    title: "Can we predict the next stock market crash?",
+    dek: "Recent headlines have warned about a possible AI bubble. This story looks at the evidence behind those warnings, revisits the market-crash episodes of 1929, 1987 and 2007–09, and explores the limits of forecasting the next one.",
+    date: "2026-08-15",
+    minutes: 10,
+    topic: "economics",
+    published: true,
+    standalone: true,
+    repo: "https://github.com/kpclick12/scrolly-next-crash",
+  },
+  {
     slug: "the-board-has-changed",
     title: "The Board Has Changed (Swedish)",
     dek: "The Swedish housing market, seen through Monopoly. Starts with the streets and prices of the 1937 Stockholm edition, then follows the game into housing prices, ownership, taxes and debt, and who gets a chance to enter the market at all.",
