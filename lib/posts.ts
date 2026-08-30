@@ -44,7 +44,7 @@ export type Post = {
 export const posts: Post[] = [
   {
     slug: "vad-ar-en-taktikrost-pa-liberalerna-vard",
-    title: "Vad är en taktikröst på Liberalerna värd?",
+    title: "What Is a Tactical Vote for the Liberals Worth? (Swedish)",
     dek: "Vad händer med mandaten om väljare stödröstar på Liberalerna? Ett visuellt experiment inför riksdagsvalet 2026.",
     date: "2026-08-30",
     minutes: 10,
