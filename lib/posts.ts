@@ -43,6 +43,17 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "vad-ar-en-taktikrost-pa-liberalerna-vard",
+    title: "Vad är en taktikröst på Liberalerna värd?",
+    dek: "Vad händer med mandaten om väljare stödröstar på Liberalerna? Ett visuellt experiment inför riksdagsvalet 2026.",
+    date: "2026-08-30",
+    minutes: 10,
+    topic: "politics",
+    published: true,
+    standalone: true,
+    repo: "https://github.com/kpclick12/scrolly-election",
+  },
+  {
     slug: "can-we-predict-the-next-stock-market-crash",
     title: "Can we predict the next stock market crash?",
     dek: "Recent headlines have warned about a possible AI bubble. This story looks at the evidence behind those warnings, revisits the market-crash episodes of 1929, 1987 and 2007–09, and explores the limits of forecasting the next one.",

@@ -16,6 +16,7 @@ export const TOPICS = [
   { id: "science", label: "Science" },
   { id: "climate", label: "Climate" },
   { id: "economics", label: "Economics" },
+  { id: "politics", label: "Politics" },
   { id: "culture", label: "Culture" },
   { id: "sport", label: "Sport" },
 ] as const;

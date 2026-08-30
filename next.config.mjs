@@ -34,6 +34,11 @@ const pieces = [
     origin: "https://kpclick12.github.io/scrolly-monopoly",
     assetBase: "/scrolly-monopoly",
   },
+  {
+    path: "/posts/vad-ar-en-taktikrost-pa-liberalerna-vard",
+    origin: "https://kpclick12.github.io/scrolly-election",
+    assetBase: "/scrolly-election",
+  },
 ];
 
 /** @type {import('next').NextConfig} */

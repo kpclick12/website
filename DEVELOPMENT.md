@@ -43,6 +43,7 @@ vendored or rewritten, and the piece keeps working standalone.
 
 | Piece | On the site |
 |---|---|
+| `scrolly-election` | yes — `/posts/vad-ar-en-taktikrost-pa-liberalerna-vard` |
 | `scrolly-next-crash` | yes — `/posts/can-we-predict-the-next-stock-market-crash` |
 | `scrolly-butterflyeffect` | yes — `/posts/the-flap-of-a-wing` |
 | `scrolly-wealth` | yes — `/posts/the-birth-lottery` |
