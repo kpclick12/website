@@ -45,7 +45,7 @@ export const posts: Post[] = [
   {
     slug: "vad-ar-en-taktikrost-pa-liberalerna-vard",
     title: "What Is a Tactical Vote for the Liberals Worth? (Swedish)",
-    dek: "Vad händer med mandaten om väljare stödröstar på Liberalerna? Ett visuellt experiment inför riksdagsvalet 2026.",
+    dek: "What happens to parliamentary seats when voters vote tactically for Sweden’s Liberal Party? A visual experiment ahead of the 2026 election.",
     date: "2026-08-30",
     minutes: 10,
     topic: "politics",
