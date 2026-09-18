@@ -18,6 +18,7 @@ kept in sync.
 
 | Piece | URL | Source |
 |---|---|---|
+| Hur långt räcker Almgrens fart? (Swedish) | [/posts/hur-langt-racker-almgrens-fart](https://plainx.dev/posts/hur-langt-racker-almgrens-fart) | [scrolly-endurance](https://github.com/kpclick12/scrolly-endurance) |
 | What Is a Tactical Vote for the Liberals Worth? (Swedish) | [/posts/vad-ar-en-taktikrost-pa-liberalerna-vard](https://plainx.dev/posts/vad-ar-en-taktikrost-pa-liberalerna-vard) | [scrolly-election](https://github.com/kpclick12/scrolly-election) |
 | Can we predict the next stock market crash? | [/posts/can-we-predict-the-next-stock-market-crash](https://plainx.dev/posts/can-we-predict-the-next-stock-market-crash) | [scrolly-next-crash](https://github.com/kpclick12/scrolly-next-crash) |
 | The Flap of a Wing | [/posts/the-flap-of-a-wing](https://plainx.dev/posts/the-flap-of-a-wing) | [scrolly-butterflyeffect](https://github.com/kpclick12/scrolly-butterflyeffect) |

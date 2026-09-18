@@ -43,6 +43,17 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "hur-langt-racker-almgrens-fart",
+    title: "Hur långt räcker Almgrens fart? (Swedish)",
+    dek: "Andreas Almgren ska springa sitt första maraton i New York. Hur långt räcker farten genom 42 195 meter?",
+    date: "2026-09-18",
+    minutes: 10,
+    topic: "sport",
+    published: true,
+    standalone: true,
+    repo: "https://github.com/kpclick12/scrolly-endurance",
+  },
+  {
     slug: "vad-ar-en-taktikrost-pa-liberalerna-vard",
     title: "What Is a Tactical Vote for the Liberals Worth? (Swedish)",
     dek: "What happens to parliamentary seats when voters vote tactically for Sweden’s Liberal Party? A visual experiment ahead of the 2026 election.",

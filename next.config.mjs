@@ -15,6 +15,11 @@
  */
 const pieces = [
   {
+    path: "/posts/hur-langt-racker-almgrens-fart",
+    origin: "https://kpclick12.github.io/scrolly-endurance",
+    assetBase: "/scrolly-endurance",
+  },
+  {
     path: "/posts/can-we-predict-the-next-stock-market-crash",
     origin: "https://kpclick12.github.io/scrolly-next-crash",
     assetBase: "/scrolly-next-crash",
