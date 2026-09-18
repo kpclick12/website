@@ -16,6 +16,9 @@ function PostEntry({ post }: { post: Post }) {
           <span className="topic-dot" data-topic={post.topic} aria-hidden="true" />
           {topicLabel(post.topic)}
         </span>
+        {post.language === "sv" && (
+          <span className="post-language">In Swedish</span>
+        )}
       </p>
       <h2>{post.title}</h2>
       <p>{post.dek}</p>

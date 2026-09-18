@@ -58,6 +58,14 @@ them.
 
 ## Adding a post
 
+### Language on plainx.dev
+
+- Keep the homepage presentation, navigation, post titles, and descriptions in English.
+- Set each registry entry's `language` to the article's language (`en` or `sv`).
+- Swedish articles get a small “In Swedish” label beside the date and subject, not a “(Swedish)” suffix in their titles.
+- Keep the entire Swedish article in Swedish, including its internal navigation and return link. Do not translate its approved text when preparing the homepage entry.
+- Check both the homepage card and the article after publication; their languages intentionally differ.
+
 1. Create `app/posts/<slug>/page.tsx`.
 2. Add an entry to `posts` in `lib/posts.ts` — the landing page reads from it.
    `published: false` hides it without deleting the route.
