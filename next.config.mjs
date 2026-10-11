@@ -15,6 +15,11 @@
  */
 const pieces = [
   {
+    path: "/posts/ljuset-i-rymden",
+    origin: "https://kpclick12.github.io/scrolly-space",
+    assetBase: "/scrolly-space",
+  },
+  {
     path: "/posts/hur-langt-racker-almgrens-fart",
     origin: "https://kpclick12.github.io/scrolly-endurance",
     assetBase: "/scrolly-endurance",
@@ -48,6 +53,17 @@ const pieces = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Relative assets in the space story need its document URL to end in a slash.
+  skipTrailingSlashRedirect: true,
+  async redirects() {
+    return [
+      {
+        source: "/posts/ljuset-i-rymden",
+        destination: "/posts/ljuset-i-rymden/",
+        permanent: true,
+      },
+    ];
+  },
   async rewrites() {
     return pieces.flatMap((p) => [
       { source: p.path, destination: `${p.origin}/` },

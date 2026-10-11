@@ -45,6 +45,18 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "ljuset-i-rymden",
+    title: "Light in Space",
+    language: "sv",
+    dek: "Follow light from the Sun through dark space to the first galaxies, and explore what it can tell us about the universe.",
+    date: "2026-10-11",
+    minutes: 10,
+    topic: "science",
+    published: true,
+    standalone: true,
+    repo: "https://github.com/kpclick12/scrolly-space",
+  },
+  {
     slug: "hur-langt-racker-almgrens-fart",
     title: "How Far Can Almgren’s Speed Take Him?",
     language: "sv",

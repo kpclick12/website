@@ -18,6 +18,7 @@ kept in sync.
 
 | Piece | URL | Source |
 |---|---|---|
+| Light in Space (In Swedish) | [/posts/ljuset-i-rymden/](https://plainx.dev/posts/ljuset-i-rymden/) | [scrolly-space](https://github.com/kpclick12/scrolly-space) |
 | How Far Can Almgren’s Speed Take Him? (In Swedish) | [/posts/hur-langt-racker-almgrens-fart](https://plainx.dev/posts/hur-langt-racker-almgrens-fart) | [scrolly-endurance](https://github.com/kpclick12/scrolly-endurance) |
 | What Is a Tactical Vote for the Liberals Worth? (Swedish) | [/posts/vad-ar-en-taktikrost-pa-liberalerna-vard](https://plainx.dev/posts/vad-ar-en-taktikrost-pa-liberalerna-vard) | [scrolly-election](https://github.com/kpclick12/scrolly-election) |
 | Can we predict the next stock market crash? | [/posts/can-we-predict-the-next-stock-market-crash](https://plainx.dev/posts/can-we-predict-the-next-stock-market-crash) | [scrolly-next-crash](https://github.com/kpclick12/scrolly-next-crash) |
