@@ -55,6 +55,7 @@ const pieces = [
 const nextConfig = {
   // Relative assets in the space story need its document URL to end in a slash.
   skipTrailingSlashRedirect: true,
+  skipMiddlewareUrlNormalize: true,
   async rewrites() {
     return pieces.flatMap((p) => [
       { source: p.path, destination: `${p.origin}/` },
